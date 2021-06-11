@@ -48,7 +48,11 @@ const App = () => {
         </button>
       </div>
       <div className={`formWrapper + ${wrapperClass}`}>
-        <Addmovie movies={movies} handleAddMovie={handleAddMovie} />
+        <Addmovie
+          movies={movies}
+          handleAddMovie={handleAddMovie}
+          setwrapperClass={setwrapperClass}
+        />
       </div>
       <Filter searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
       <MovieList list={movies} />

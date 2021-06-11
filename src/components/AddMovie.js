@@ -1,6 +1,6 @@
 import { useInput } from "../hooks/input-hook";
 
-const Addmovie = ({ movies, handleAddMovie }) => {
+const Addmovie = ({ movies, handleAddMovie, setwrapperClass }) => {
   const { value: title, bind: bindTitle, reset: resetTitle } = useInput("");
   const {
     value: synopsis,
@@ -22,6 +22,7 @@ const Addmovie = ({ movies, handleAddMovie }) => {
     resetSynopsis();
     resetPosterUrl();
     resetRating();
+    setwrapperClass("");
   };
 
   return (
