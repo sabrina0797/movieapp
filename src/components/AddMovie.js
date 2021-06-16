@@ -1,4 +1,5 @@
 import { useInput } from "../hooks/input-hook";
+import Rating from "./Rating";
 
 const Addmovie = ({ movies, handleAddMovie, setwrapperClass }) => {
   const { value: title, bind: bindTitle, reset: resetTitle } = useInput("");
@@ -17,7 +18,8 @@ const Addmovie = ({ movies, handleAddMovie, setwrapperClass }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleAddMovie(id, title, synopsis, rating, posterUrl);
+    console.log(id, title, synopsis, posterUrl, rating);
+    // handleAddMovie(id, title, synopsis, posterUrl, rating);
     resetTitle();
     resetSynopsis();
     resetPosterUrl();
@@ -52,14 +54,8 @@ const Addmovie = ({ movies, handleAddMovie, setwrapperClass }) => {
       />
       <label htmlFor="rating">Rating</label>
       <br />
-      <input
-        type="text"
-        id="rating"
-        name="rating"
-        placeholder="Enter the rating..."
-        {...bindRating}
-      />
-      <span> /10 </span>
+      <Rating {...bindRating} />
+
       <br />
       <input type="submit" value="Submit" />
     </form>

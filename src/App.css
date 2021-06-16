@@ -179,3 +179,11 @@ input[type="search"] {
 .movie_card:hover .synopsis {
   transform: translateY(0%);
 }
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+}
